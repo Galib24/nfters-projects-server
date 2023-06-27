@@ -25,32 +25,27 @@ const client = new MongoClient(uri, {
   }
 });
 
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+// fix connect to mongodb
 
+const dbConnect = async () => {
+    try {
+        client.connect();
+        console.log("Database Connected Successfully✅");
 
-    // collection part by mongodb
-    const dataCollection = client.db('nftersDb').collection('Collections');
+    } catch (error) {
+        console.log(error.name, error.message);
+    }
+}
+dbConnect()
+
+const dataCollection = client.db('nftersDb').collection('Collections');
+
+    
 
     app.get('/collections', async (req, res)=>{
         const result = await dataCollection.find().toArray();
         res.send(result);
     })
-
-
-
-
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    // await client.close();
-  }
-}
-run().catch(console.dir);
 
 
 
