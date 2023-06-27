@@ -17,4 +17,4 @@ GitHub Repo -> [Github-client-Link]()
 GitHub Repo -> [Github-client-server-Link](https://github.com/Galib24/nfters-projects-server)
 
 ## complete project Live link
-Hosted in Fire Base -> [nfters-project]()
+Hosted in Fire Base -> [nfters-project](https://649b2710c82be604c3203ac7--strong-daffodil-3e1d74.netlify.app/)
